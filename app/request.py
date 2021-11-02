@@ -6,7 +6,7 @@ api_key = None
 # Getting source url
 source_url= None
 # Getting source url
-cat_url= None
+category_url= None
 
 def configure_request(app):
     global api_key, source_url
@@ -87,11 +87,11 @@ def process_articles_results(news):
 
     return article_source_results
 
-def get_category(cat_name):
+def get_category(category_name):
     '''
     function that gets the response to the category json
     '''
-    get_category_url = cat_url.format(cat_name,api_key)
+    get_category_url = category_url.format(category_name,api_key)
     print(get_category_url)
     with urllib.request.urlopen(get_category_url) as url:
         get_category_data = url.read()
